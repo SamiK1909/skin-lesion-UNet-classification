@@ -24,13 +24,8 @@ The pipeline classifies lesions into **8 diagnostic categories**:
 
 The entire pipeline is consolidated into a single, cohesive Jupyter notebook: `skin_lesion_pipeline.ipynb`. It executes three core phases in sequence:
 
-[ Step 1: Segmentation ] ──> [ Step 2: Feature Extraction ] ──> [ Step 3: Classification ]
-Train U-Net on available      Extract ABCD + Texture            Train RBF-Kernel SVM,
-masks -> Predict missing      features from images &            evaluate metrics, and
-masks for all images.         demographic metadata.             generate predictions.
 
-
-### 1. Segmentation
+### 1. Segmentation (Predict missing masks)
 Not all images in the dataset include ground-truth masks. 
 * **Model:** A U-Net architecture (encoder-decoder with skip connections).
 * **Training:** Validated on a subset with ground-truth masks using a combined **Binary Cross-Entropy + Dice Loss** with early stopping.
@@ -63,7 +58,6 @@ Performance evaluated on an 80/20 stratified validation split:
 | :--- | :--- |
 | **Overall Accuracy** | 0.66 |
 | **Weighted F1-Score** | 0.68 |
-| **Macro F1-Score** | 0.53 |
 
 ---
 
