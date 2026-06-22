@@ -61,25 +61,31 @@ Performance evaluated on an 80/20 stratified validation split:
 
 ---
 
-## Setup & Installation
+# Setup & Installation
 
-1. **Clone the Repository:**
-   ```bash
-   git clone [https://github.com/your-username/skin-lesion-classification.git](https://github.com/your-username/skin-lesion-classification.git)
-   cd skin-lesion-classification
-Install Dependencies:
+## 1. Clone the Repository
 
-Bash
+```bash
+git clone https://github.com/your-username/skin-lesion-classification.git
+cd skin-lesion-classification
+```
+
+## 2. Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Data Structure
+```
+
+# Data Structure
+
 Download the dataset components from the ISIC Archive and arrange them as follows:
 
-Plaintext
+```text
 skin-lesion-classification/
 ├── Train/
 │   └── Train/
 │       ├── ISIC_XXXXXXX.jpg
-│       └── ISIC_XXXXXXX_seg.png    # (Where ground truth is available)
+│       └── ISIC_XXXXXXX_seg.png    # Ground-truth segmentation mask (if available)
 ├── Test/
 │   └── Test/
 │       └── ISIC_XXXXXXX.jpg
@@ -87,16 +93,25 @@ skin-lesion-classification/
 ├── metadataTest.csv
 ├── SampleSubmission.csv
 └── gpu_unet_improved.h5            # Pre-trained U-Net weights
-Usage
-Launch Jupyter Notebook and open the master pipeline script:
+```
 
-Bash
+# Usage
+
+Launch Jupyter Notebook and open the main pipeline notebook:
+
+```bash
 jupyter notebook skin_lesion_pipeline.ipynb
-Execute the cells sequentially. If you are utilizing the pre-trained weights (gpu_unet_improved.h5), you can flag the model training cells to False to jump straight to automated mask prediction and feature processing.
+```
 
-Project Structure
-Plaintext
+Execute all cells sequentially.
+
+> **Note:** If you are using the provided pre-trained weights (`gpu_unet_improved.h5`), you can skip the model training steps and directly run mask prediction and feature extraction.
+
+# Project Structure
+
+```text
 skin-lesion-classification/
-├── skin_lesion_pipeline.ipynb   # Master notebook containing the full pipeline
-├── requirements.txt             # Project dependencies 
+├── skin_lesion_pipeline.ipynb   # Complete end-to-end pipeline
+├── requirements.txt             # Project dependencies
 └── README.md                    # Project documentation
+```
