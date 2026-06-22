@@ -66,7 +66,7 @@ Performance evaluated on an 80/20 stratified validation split:
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/skin-lesion-classification.git
+git clone https://github.com/SamiK1909/skin-lesion-classification.git
 cd skin-lesion-classification
 ```
 
@@ -80,38 +80,48 @@ pip install -r requirements.txt
 
 Download the dataset components from the ISIC Archive and arrange them as follows:
 
-```text
+```plaintext
 skin-lesion-classification/
+│
 ├── Train/
 │   └── Train/
 │       ├── ISIC_XXXXXXX.jpg
-│       └── ISIC_XXXXXXX_seg.png    # Ground-truth segmentation mask (if available)
+│       └── ISIC_XXXXXXX_seg.png
+│
 ├── Test/
 │   └── Test/
 │       └── ISIC_XXXXXXX.jpg
+│
 ├── metadataTrain.csv
 ├── metadataTest.csv
 ├── SampleSubmission.csv
-└── gpu_unet_improved.h5            # Pre-trained U-Net weights
+├── gpu_unet_improved.h5
+└── skin_lesion_pipeline.ipynb
 ```
 
 # Usage
 
-Launch Jupyter Notebook and open the main pipeline notebook:
+Launch Jupyter Notebook:
 
 ```bash
 jupyter notebook skin_lesion_pipeline.ipynb
 ```
 
-Execute all cells sequentially.
+Execute the notebook cells sequentially.
 
-> **Note:** If you are using the provided pre-trained weights (`gpu_unet_improved.h5`), you can skip the model training steps and directly run mask prediction and feature extraction.
+> **Note:** If you are using the provided pre-trained weights (`gpu_unet_improved.h5`), you can skip the model training stages and proceed directly to mask prediction and feature extraction.
 
 # Project Structure
 
-```text
+```plaintext
 skin-lesion-classification/
-├── skin_lesion_pipeline.ipynb   # Complete end-to-end pipeline
-├── requirements.txt             # Project dependencies
-└── README.md                    # Project documentation
+│
+├── skin_lesion_pipeline.ipynb
+│   └── Complete end-to-end pipeline
+│
+├── requirements.txt
+│   └── Project dependencies
+│
+└── README.md
+    └── Project documentation
 ```
