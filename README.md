@@ -22,7 +22,7 @@ The pipeline classifies lesions into **8 diagnostic categories**:
 
 ## Pipeline Architecture
 
-The entire pipeline is consolidated into a single, cohesive Jupyter notebook: `skin_lesion_pipeline.ipynb`. It executes three core phases in sequence:
+The entire pipeline is consolidated into a single, cohesive Jupyter notebook: `skin_lesion_pipeline.ipynb`. It executes three core phases:
 
 
 ### 1. Segmentation (Predict missing masks)
