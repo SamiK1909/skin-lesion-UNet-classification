@@ -50,17 +50,6 @@ Features are extracted dynamically from the combined image-mask pairs using the 
 
 ---
 
-## Results
-
-Performance evaluated on an 80/20 stratified validation split:
-
-| Metric | Score |
-| :--- | :--- |
-| **Overall Accuracy** | 0.66 |
-| **Weighted F1-Score** | 0.68 |
-
----
-
 # Setup & Installation
 
 ## 1. Clone the Repository
